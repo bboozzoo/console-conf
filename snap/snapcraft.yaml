@@ -136,6 +136,21 @@ plugs:
     write:
       - /run/console-conf
       - /var/log/console-conf
+  terminal-access:
+    interface: custom-device
+
+slots:
+  terminal-devices:
+    interface: custom-device
+    custom-device: terminal-access
+    devices:
+      - /dev/tty[0-9]
+      - /dev/ttyS[0-9]
+    udev-tagging:
+      - kernel: tty[0-9]
+        subsystem: tty
+      - kernel: ttyS[0-9]
+        subsystem: tty
 
 build-packages:
   - apt-utils
