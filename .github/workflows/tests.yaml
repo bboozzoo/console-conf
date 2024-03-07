@@ -18,6 +18,7 @@ jobs:
         with:
           # add riscv64 once we have a core24 snap for it, see
           # https://launchpad.net/~ubuntu-core-service/+snap/core24
-          architectures: arm64,amd64,armhf
+          # architectures: arm64,amd64,armhf
+          architectures: amd64
           # TODO enable once we have tests in repository
           run_tests: false
